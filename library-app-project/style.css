@@ -1,0 +1,184 @@
+
+/******** Global styles ********/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #f8f5f1;
+    color: #e4d3cf;
+    font-family: monospace;
+    line-height: 1.5;
+}
+
+h1{
+    padding-bottom: 10px;
+    font-size: 3rem;
+}
+
+h3{
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 2;
+}
+
+p {
+    font-size: 0.9rem;
+    font-weight:normal;
+    line-height: 1.5;
+    padding: 1rem auto;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 100px;
+    margin: 50px auto;
+}
+
+aside {
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+header {
+    text-align: center;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+input{
+    border: none;
+    border-bottom: 2px solid #b4a5a5;
+    background: #301b3f;
+    outline: none;
+    padding: 5px;
+    color: inherit;
+    font-size: 0.8rem;
+    transition: 0.7s ease-in-out;
+}
+
+input:focus{
+    border-bottom: 2px solid rgba(37, 14, 53, 0.9);
+}
+
+select {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #b4a5a5;
+    background: inherit;
+    color: inherit;
+    padding-bottom: 5px;
+    font-size: 0.8rem;
+}
+
+option{
+    color: inherit;
+    background: #301b3f;
+
+}
+
+button{
+    margin: 20px auto auto;
+    padding: 10px 20px;
+    color: inherit;
+    background: #693c72;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid transparent;
+}
+
+form{
+    text-align: left;
+}
+
+.submit-button input{
+    border: none;
+    background: #693c72;
+    padding: 10px;
+    color: inherit;
+    margin-top: 20px;
+}
+.main-container {
+    max-width: 960px;
+    width: 100%;
+    margin: 20px auto;
+    background: #301b3f;
+    height: 100%;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+
+.book-display {
+    grid-column: span 2;
+    
+}
+
+.book-display-heading{
+    text-align: center;
+    font-weight: 900;
+    font-family: serif;
+    font-size: 1rem;
+}
+.book-display-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-around;
+    height: 100%;
+    grid-gap: 20px;
+}
+
+.author,
+.title,
+.total-pages,
+.read-status,
+.submit-button{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 20px 30px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.author:focus,
+.title:focus,
+.total-pages:focus,
+.read-status:focus {
+    outline: none;
+    color: transparent;
+}
+
+
+.younglad {
+    background: rgba(37, 14, 53, 0.9);
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px 20px 10px;
+    margin: 20px auto;
+    height: 100%;
+}
+
+.younglad p{
+    font-size: 1rem;
+    padding: 2rem auto;
+}
+
+
+
+
+
+/* media query */
+@media(max-width: 870px){
+    main{
+        display: flex;
+        flex-direction: column;
+    }
+}
+

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="main-container">
+
+
+        <header class="container">
+            <h1>Library App</h1>
+            <h2>The Odin Project Library app project</h2>
+        </header>
+
+        <main>
+            <aside>
+                <form action="">
+                    <div class="author">
+                        <label for="author">Author</label>
+                        <input type="text" name="author" id="author">
+                    </div>
+                    <div class="title">
+                        <label for="title">Title</label>
+                        <input type="text" name="title" id="title">
+                    </div>
+
+                    <div class="total-pages">
+                        <label for="author">Total Pages</label>
+                        <input type="number" name="total-pages" id="total-pages">
+                    </div>
+
+                    <div class="read-status">
+                        <label for="read-status">Status:</label>
+                        <select name="read-status" id="read-status">
+                            <option value="read">Read</option>
+                            <option value="notread">Not-read</option>
+                        </select>
+                    </div>
+                    <div class="submit-button">
+                        <input type="submit">
+                    </div>
+
+                </form>
+            </aside>
+
+            <section class="book-display">
+
+                <div class="book-display-heading">
+                    <h2>Your Books</h2>
+                </div>
+
+                <div class="book-display-grid">
+                    <div class="younglad">
+                        <h3>Young Lad</h3>
+                        <p>by Mike smith</p>
+                        <p>300 pages</p>
+                        <p>Status: Read</p>
+
+                        <button class="change-status">Change Status</button>
+                        <button>Delete</button>
+                    </div>
+                    <div class="younglad">
+                        <h3>Young Lad</h3>
+                        <p>by Mike smith</p>
+                        <p>300 pages</p>
+                        <p>Status: Read</p>
+                        <button class="change-status">Change Status</button>
+                        <button>Delete</button>
+                    </div>
+                    <div class="younglad">
+                        <h3>Young Lad</h3>
+                        <p>by Mike smith</p>
+                        <p>300 pages</p>
+                        <p>Status: Read</p>
+                        <button class="change-status">Change Status</button>
+                        <button>Delete</button>
+                    </div>
+                    <div class="younglad">
+                        <h3>Young Lad</h3>
+                        <p>by Mike smith</p>
+                        <p>300 pages</p>
+                        <p>Status: Read</p>
+                        <button class="change-status">Change Status</button>
+                        <button>Delete</button>
+
+                    </div>
+                </div>
+                
+            </section>
+        </main>
+
+
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+</html>
