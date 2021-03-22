@@ -36,13 +36,15 @@ p {
 main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 100px;
+    grid-gap: 70px;
     margin: 50px auto;
+    justify-content: center;
 }
 
 aside {
     border-radius: 5px;
-    margin: 0 10px;
+    margin: auto 20px;
+    background: #e4d3cf;
 }
 
 header {
@@ -51,29 +53,30 @@ header {
 
 label {
     margin-bottom: 10px;
+    color: #301b3f;
 }
 
 input{
     border: none;
-    border-bottom: 2px solid #b4a5a5;
-    background: #301b3f;
+    border-bottom: 2px solid #301b3f;
+    background: #e4d3cf;
     outline: none;
     padding: 5px;
-    color: inherit;
+    color: #301b3f;
     font-size: 0.8rem;
     transition: 0.7s ease-in-out;
 }
 
 input:focus{
-    border-bottom: 2px solid rgba(37, 14, 53, 0.9);
+    border-bottom: 3px solid;
 }
 
 select {
     outline: none;
     border: none;
-    border-bottom: 2px solid #b4a5a5;
+    border-bottom: 2px solid #301b3f;
     background: inherit;
-    color: inherit;
+    color: #301b3f;
     padding-bottom: 5px;
     font-size: 0.8rem;
 }
@@ -100,7 +103,7 @@ form{
 
 .submit-button input{
     border: none;
-    background: #693c72;
+    background: #301b3f;
     padding: 10px;
     color: inherit;
     margin-top: 20px;
@@ -117,22 +120,29 @@ form{
 
 
 .book-display {
-    grid-column: span 2;
     
+    grid-column: span 2;
+    margin: auto 20px;
 }
 
 .book-display-heading{
     text-align: center;
     font-weight: 900;
-    font-family: serif;
-    font-size: 1rem;
+    font-family: inherit;
+    font-size: 1.7rem;
+    padding-top: 0;
 }
+
+
 .book-display-grid{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: space-around;
+    background: #e4d3cf;
     height: 100%;
     grid-gap: 20px;
+    padding: 30px;
+    border-radius: 10px;
 }
 
 .author,
@@ -156,7 +166,7 @@ form{
 }
 
 
-.younglad {
+.book-card {
     background: rgba(37, 14, 53, 0.9);
     border-radius: 10px;
     text-align: center;
@@ -165,7 +175,7 @@ form{
     height: 100%;
 }
 
-.younglad p{
+.book-card p{
     font-size: 1rem;
     padding: 2rem auto;
 }
@@ -182,3 +192,9 @@ form{
     }
 }
 
+@media(max-width:400px){
+    .book-display-grid{
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+}
