@@ -37,14 +37,15 @@ main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 70px;
-    margin: 50px auto;
-    justify-content: center;
+    margin-top: 50px;
 }
 
 aside {
     border-radius: 5px;
-    margin: auto 20px;
+    margin: 20px;
     background: #e4d3cf;
+    align-self: flex-start;
+    position: relative;
 }
 
 header {
@@ -79,12 +80,13 @@ select {
     color: #301b3f;
     padding-bottom: 5px;
     font-size: 0.8rem;
+    cursor: pointer;
 }
 
-option{
-    color: inherit;
-    background: #301b3f;
 
+option{
+    color: #e4d3cf;
+    background: #301b3f;
 }
 
 button{
@@ -95,6 +97,7 @@ button{
     outline: none;
     border-radius: 5px;
     border: 1px solid transparent;
+    cursor: pointer;
 }
 
 form{
@@ -107,6 +110,7 @@ form{
     padding: 10px;
     color: inherit;
     margin-top: 20px;
+    cursor: pointer;
 }
 .main-container {
     max-width: 960px;
@@ -122,6 +126,7 @@ form{
 .book-display {
     
     grid-column: span 2;
+    align-self: auto;
     margin: auto 20px;
 }
 
@@ -139,6 +144,7 @@ form{
     grid-template-columns: repeat(2, 1fr);
     justify-content: space-around;
     background: #e4d3cf;
+    min-height: 400px;
     height: 100%;
     grid-gap: 20px;
     padding: 30px;

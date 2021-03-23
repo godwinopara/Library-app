@@ -2,33 +2,13 @@ const form = document.querySelector("form");
 const bookDisplayGrid = document.querySelector(".book-display-grid");
 const status = document.querySelectorAll(".status");
 
-const changeStatus = document.querySelectorAll(".change-status");
-const deleteBook = document.querySelectorAll(".delete");
 
 form.addEventListener("submit", addBookToLibrary);
-changeStatus.forEach((changeButton) => {
-  changeButton.addEventListener("click", (e) => {
-    let currentStatus = e.target.parentElement.childNodes[7];
-    switch (currentStatus.textContent) {
-      case "Status: Read":
-        currentStatus.textContent = "Status: Not Read";
-        break;
-      case "Status: Not Read":
-        currentStatus.textContent = "Status: Read";
-        break;
-    }
-  });
-});
 
-deleteBook.forEach((element) => {
-  element.addEventListener("click", (e) => {
-    console.log(myLibrary);
-  });
-});
 
-let myLibrary = [
-  { author: "mike", title: "flex", totalPages: 100, status: "read" },
-];
+
+
+let myLibrary = [];
 
 function Book(author, title, totalPages, status) {
   this.author = author;
@@ -43,9 +23,9 @@ function addBookToLibrary(e) {
 
   for (let i = 0; i < e.target.length; i++) {
     if (e.target[i].type != "submit") array.push(e.target[i].value);
+
   }
   myLibrary.push(new Book(...array));
-
   DisplayBook();
 }
 
@@ -61,6 +41,7 @@ function DisplayBook() {
 
     let newDiv = document.createElement("div");
     newDiv.className = "book-card";
+    newDiv.setAttribute("data-index-number", `${index}`)
     let bookTitle = document.createElement("h3");
     let bookAuthor = document.createElement("p");
     let bookPages = document.createElement("p");
@@ -107,10 +88,62 @@ function DisplayBook() {
     newDiv.appendChild(deleteButton);
 
     /// End
+    
+   
+    
 
     // Append to Parent Element
     bookDisplayGrid.appendChild(newDiv);
+
+
+    // toggle between if the user have read the book or not///
+
+  
+    changeReadStatus()
+    deleteBook()
   });
 }
 
-function createNewBookCard() {}
+function changeReadStatus(){
+  let changeStatus = document.querySelectorAll(".change-status");
+     changeStatus.forEach((changeButton) => {
+      changeButton.addEventListener("click", (e) => {
+        let currentStatus = e.target.parentElement.childNodes[3];
+        let index = e.target.parentElement.dataset.indexNumber
+        if (myLibrary[index].status === "Read"){
+          myLibrary[index].status = "Notread"
+          currentStatus.innerHTML = `<p>Status: ${myLibrary[index].status}</p>`;
+          console.log(myLibrary)
+        }else if(myLibrary[index].status === "Notread"){
+          // currentStatus.innerHTML = "Status: Read";
+          myLibrary[index].status = "Read"
+          currentStatus.innerHTML = `<p>Status: ${myLibrary[index].status}</p>`;
+          console.log(myLibrary)
+        }
+      });
+    });
+}
+
+function deleteBook(){
+  const deleteBook = document.querySelectorAll(".delete");
+
+  deleteBook.forEach(deleteButton => {
+    deleteButton.addEventListener("click", (e) => {
+      let result = confirm("Are you sure you want to delete?")
+      let index = e.target.parentElement.dataset.indexNumber
+      
+      switch(result){
+        case true:
+          myLibrary.splice(index, 1)
+          DisplayBook()
+          break;
+          case false:
+            DisplayBook()
+            break;
+            
+      }
+    })
+  })
+
+}
+
